@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:
+  namespace: kube-system
+data:
+# added a priorities that will prioritize one node group to scale before others
+# here reserved instances will be prioritized 1st 
+  priorities: |-
+    10:
+      - .*ondemand.*
+    50: 
+      - .*reserved.*
+
+#Karpenter is the new auto scaler that will take one step further than cluster auto scaler 
+#Karpenter will not only put pod to other EC2 or node but will also change the size of EC2 
+#must enable consolidation to true 
