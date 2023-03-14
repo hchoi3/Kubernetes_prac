@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-app-deployment
+  name: nginx
+  namespace: default
   labels:
     app: app
 spec:
@@ -17,8 +18,8 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
-        #ports:
-        #- containerPort: 3000
+        ports:
+        - containerPort: 80
         resources:
         #guarnteed resources
           requests:
