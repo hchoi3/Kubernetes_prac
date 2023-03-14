@@ -17,8 +17,8 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
-        ports:
-        - containerPort: 3000
+        #ports:
+        #- containerPort: 3000
         resources:
         #guarnteed resources
           requests:
