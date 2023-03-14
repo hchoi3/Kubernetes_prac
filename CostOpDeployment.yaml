@@ -15,8 +15,8 @@ spec:
         app: app
     spec:
       containers:
-      - name: app
-        image: project-image-here
+      - name: nginx
+        image: nginx:latest
         ports:
         - containerPort: 3000
         resources:
